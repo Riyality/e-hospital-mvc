@@ -1,0 +1,112 @@
+::placeholder {
+	color: 777777 !important;
+	font-size: 11px !important;
+	padding-left: 4px;
+}
+
+.spti-inpt {
+	margin-bottom: 8px;
+	padding-left: 0px;
+	outline: none;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	font-size: 13px;
+	padding: 3px;
+}
+
+::placeholder {
+	color: 777777 !important;
+	font-size: 5px !important;
+	padding-left: 8px;
+}
+
+::placeholder, select {
+	color: 777777 !important;
+	font-size: 11px !important;
+	padding-left: 8px;
+}
+
+.spti-label {
+	font-size: 0.7em;
+	font-style: inherit;
+	line-height: 1.33333;
+	font-weight: 500;
+	margin-bottom: 0rem;
+	padding: 0px 0px 0px 0px;
+	color: #222222;
+	display: inline-block;
+	margin-top: 0px;
+	margin-bottom: var(- -ds-space-050, 4px);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.spti-textarea-height {
+	height: 100px;
+	outline: none;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	padding: 0px !important;
+	font-size: 13px;
+	padding: 3px;
+}
+
+.spti-btn-Color {
+	background-color: #EEDC82;
+	height: 33px;
+}
+
+.mandatory-sign {
+	color: red;
+}
+
+.add-btn {
+	margin-top: 20px;
+}
+
+.cancel-btn {
+	margin-top: 20px;
+}
+
+.modal-title {
+	font-size: 16px;
+}
+
+.spti-inpt-select {
+	margin-bottom: 8px;
+	padding: 4px;
+	padding-left: 0px;
+	outline: none;
+	border: 1px solid lightgray;
+	border-radius: 4px;
+	padding-left: 0px;
+}
+
+.avatar-title {
+	align-items: center;
+	background-color: linear-gradient(90deg, #a9ffc6 0%, #8ecfff 100%);;
+	color: #fff;
+	display: flex;
+	font-weight: 500;
+	height: 30px;
+	width: 30px;
+	border-radius: 50px;
+	justify-content: center;
+	border: 1px solid #8ecfff;
+	margin-right: 15px;
+	text-transform: capitalize;
+	
+  background: linear-gradient(90deg, #a9ffc6 0%, #8ecfff 100%);
+	
+}
+
+.userName a {
+	font-size: 0.9rem;
+	font-width: 600;
+	color: #333;
+}
+
+.userName p {
+	font-size: 0.8rem;
+	font-width: 500;
+	color: #666;
+}
