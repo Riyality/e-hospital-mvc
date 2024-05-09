@@ -24,12 +24,12 @@
 
 <body>
 	<jsp:include page="../common/header.jsp"></jsp:include>
-	<div class="height-90">
+			
+		  <div class="row">
+			<div class="col-md-8">
 		<div class="main-content  ">
 		
-			<div class="container-fluid">
-			
-			
+		 <div class="container">
 
 			<h5 class="">Add Doctor</h5>
 			<form class="login-form" action="doctors" method="post">
@@ -130,6 +130,7 @@
 		</div>
 	</div>
 	</div>
+  </div>
 	<script type="text/javascript">
 		$(window).on('load', function() {
 			$('#addUserModel').modal('show');
