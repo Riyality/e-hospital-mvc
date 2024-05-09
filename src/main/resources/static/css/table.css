@@ -1,0 +1,217 @@
+
+
+@charset "UTF-8";
+
+#tableID{ 
+	font-size:13px;
+	color: #72747b;
+	font-weight:500; 
+}
+
+#tableID td{
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableID th {
+  border-bottom: none !important;
+  padding: 8px;
+}
+
+#tableID .avatar-title {
+      align-items: center;
+    background-color: linear-gradient(90deg, #a9ffc6 0%, #8ecfff 100%)R;
+    color: #333;
+    display: flex;
+    font-weight: 500;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    justify-content: center;
+    border: 1px solid #8ecfff;
+    margin-right: 15px;
+    text-transform: capitalize;
+}
+
+#tableID a{
+	font-size:15px;
+	color:#333;
+	font-weight:500;
+	
+}
+
+#tableID_wrapper{
+	font-size:13px;
+	font-weight:500;
+	color:#72747b;
+}
+
+#tableID_wrapper select , #tableID_wrapper input{
+	font-size: 13px;
+    font-weight: 500;
+    color: #72747b;
+    padding: 3px 5px;
+}
+ 
+ table.dataTable thead{
+ 	/* background: linear-gradient(90deg, rgb(255 239 172 / 76%) 0%, rgb(255 217 152) 100%); */
+ 	background-color:#ddd;
+ }
+ 
+
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 5px 1px 5px 1px;
+    border-bottom: 1px solid #838282;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button { 
+    min-width: 1.7em;
+    padding: 3px 10px 1px 10px; 
+}
+
+.filter {
+    width: 150px;
+    position: absolute;
+    top: 20px !important;
+    left: 440px !important;
+    border-radius: 3px;
+    z-index: 1000;
+    font-size: 0.8rem;
+    border: 1px solid #aaa;
+    height: 26px;
+}
+
+.ellipsis-description {
+  white-space: nowrap;
+  width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0px;
+}
+
+#tableID .project-initial-name {
+    display: inline-block;
+    padding: 0.3em 0.65em;
+    font-size: .55em !important;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: #6c757d!important;
+    margin: 5px 5px;
+}
+
+#tableID .colorLight{
+	font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+#tableID .project-badge{ 
+	display: inline-block;
+    padding: 0.3em 0.5em;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25rem;
+    background-color: #6c757d!important;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid #eee !important;  
+}
+
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+
+#tableID_wrapper .bottom{
+	margin-top:10px;
+}
+#tableID_filter input{
+	padding:2px 10px !important;
+	font-size: 0.8rem;
+}
+
+#tableID_wrapper .bottom{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#tableID_filter {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+    margin-top: -1px;
+    -webkit-overflow-scrolling: touch;
+    max-height: 72vh;
+}
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+     border-bottom: noneR !important; 
+}
+
+
+.paginate_button{
+	color:#333;
+}
+
+.dataTables_paginate span{
+    background-color: #c9c9c9;
+    border-radius: 3px;
+    color: #ccc;
+    margin:5px;
+    padding:3px 5px;
+}
+
+.edit-icon{
+	 /* color: linear-gradient(90deg, #a9ffc6 0%, #8ecfff 100%) !important;  */
+	color: #0f7fd3;
+}
+
+.Patients-status {
+    background-color: #9ce8e2;
+    color: #333;
+    padding: 2px 5px;
+    font-size: 10px !important;
+    border-radius: 3px;
+    margin: 0px;
+}
+.spti-table-head{
+	font-size: 13px;
+}
+
+.ward-occupancy{
+	font-size:10px;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 15px;
+}
+
+.staff-active{
+	font-size:10px;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 15px;
+    background-color:green
+}
+
+.staff-in-active{
+	font-size:10px;
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 15px;
+    background-color:red;
+}
