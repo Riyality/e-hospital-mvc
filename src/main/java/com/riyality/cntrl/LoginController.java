@@ -1,6 +1,7 @@
 package com.riyality.cntrl;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,9 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.riyality.service.LoginService;
 import com.riyality.Dto.LoginRequestDto;
 import com.riyality.Dto.LoginResponceDto;
-import com.riyality.service.LoginService;
 
 @Controller
 public class LoginController {
@@ -25,7 +26,7 @@ public class LoginController {
 	}
 
 	@PostMapping( "/login-user" )
-	public String loginUser( @ModelAttribute LoginRequestDto loginDto, Model model, HttpSession session ) {
+	public String loginUser( @ModelAttribute @Valid LoginRequestDto loginDto, Model model, HttpSession session ) {
 		LoginResponceDto dto = loginservice.login( loginDto );
 		if ( dto == null ) {
 			model.addAttribute( "errorMsg", "invalid cred..." );

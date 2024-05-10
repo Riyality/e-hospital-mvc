@@ -1,6 +1,7 @@
 package com.riyality.cntrl;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +32,7 @@ public class InsuranceDetailController {
 
 	@ResponseBody
 	@PostMapping
-	public InsuranceDetailResponseDto addInsurance( @RequestBody InsuranceDetailRequestDto dto, Model model, HttpSession session ) {
+	public InsuranceDetailResponseDto addInsurance( @Valid @RequestBody InsuranceDetailRequestDto dto, Model model, HttpSession session ) {
 
 		InsuranceDetailResponseDto result = insuranceService.addInsurance( dto );
 

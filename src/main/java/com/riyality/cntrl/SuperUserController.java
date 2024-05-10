@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.riyality.service.BranchService;
 import com.riyality.Dto.BranchDto;
 import com.riyality.Dto.BranchResponceDto;
-import com.riyality.service.BranchService;
 
 @Controller
 @RequestMapping( "/superuser" )

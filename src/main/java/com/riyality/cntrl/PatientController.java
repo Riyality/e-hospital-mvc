@@ -3,6 +3,7 @@ package com.riyality.cntrl;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.riyality.constants.MessageConstants;
+import com.riyality.service.HrService;
+import com.riyality.service.PatientService;
 import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.patients.PatientPageDto;
 import com.riyality.Dto.patients.PatientRequestDto;
 import com.riyality.Dto.patients.PatientResponseDto;
-import com.riyality.constants.MessageConstants;
-import com.riyality.service.HrService;
-import com.riyality.service.PatientService;
 
 @Controller
 @RequestMapping( "/patients" )
@@ -42,7 +43,7 @@ public class PatientController {
 	}
 
 	@PostMapping
-	public String addPatient( @ModelAttribute PatientRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String addPatient(@Valid  @ModelAttribute PatientRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 
@@ -110,7 +111,7 @@ public class PatientController {
 	}
 
 	@PostMapping( "/update" )
-	public String updatePatient( @ModelAttribute PatientRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String updatePatient( @ModelAttribute @Valid PatientRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 

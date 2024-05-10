@@ -3,6 +3,7 @@ package com.riyality.cntrl;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,15 +15,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.riyality.constants.MessageConstants;
+import com.riyality.service.DropdownService;
+import com.riyality.service.HrService;
 import com.riyality.Dto.DoctorSpecializationDto;
 import com.riyality.Dto.doctors.DoctorPageDto;
 import com.riyality.Dto.doctors.DoctorRequestDto;
 import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.staff.StaffRequestDto;
 import com.riyality.Dto.staff.StaffResponseDto;
-import com.riyality.constants.MessageConstants;
-import com.riyality.service.DropdownService;
-import com.riyality.service.HrService;
 
 @Controller
 @RequestMapping( "/hrs" )
@@ -50,7 +51,7 @@ public class HrController {
 	}
 
 	@PostMapping( "/doctors" )
-	public String addDoctor( @ModelAttribute DoctorRequestDto doctorDto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String addDoctor(@Valid @ModelAttribute DoctorRequestDto doctorDto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 
@@ -117,7 +118,7 @@ public class HrController {
 	}
 
 	@PostMapping( "/doctors/update" )
-	public String updateDoctor( @ModelAttribute DoctorRequestDto doctorDto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String updateDoctor(@Valid @ModelAttribute DoctorRequestDto doctorDto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 
@@ -139,7 +140,7 @@ public class HrController {
 	}
 
 	@PostMapping( "/staffs" )
-	public String addStaff( @ModelAttribute StaffRequestDto staffDto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String addStaff(@Valid @ModelAttribute StaffRequestDto staffDto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 
@@ -178,7 +179,7 @@ public class HrController {
 	}
 
 	@PostMapping( "/staffs/update" )
-	public String updateStaff( @ModelAttribute StaffRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String updateStaff( @Valid @ModelAttribute StaffRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 
