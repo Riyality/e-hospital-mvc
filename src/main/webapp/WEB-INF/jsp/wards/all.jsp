@@ -85,7 +85,7 @@
 							<td style="width:10%;">${user.charges}</td>
 
 							<td style="width:5%;"><a
-								href="http://localhost:7171/wards/id?id=${user.id }"><i
+								href="http://localhost:8181/wards/id?id=${user.id }"><i
 									class="fa fa-pencil edit-icon" style="font-size: 14px"></i></a></td>
 
 						</tr>

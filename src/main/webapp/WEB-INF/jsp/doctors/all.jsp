@@ -66,7 +66,7 @@
 							<td style="width:10%;"><span class="badge bg-success">${user.status}</span></td>
 
 							<td style="width:5%;"><a
-								href="http://localhost:7171/hrs/doctors/id?id=${user.id }"><i
+								href="http://localhost:8181/hrs/doctors/id?id=${user.id }"><i
 									class="fa fa-pencil edit-icon" style="font-size: 14px;"></i></a></td>
 
 						</tr>

@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.riyality.service.DropdownService;
 import com.riyality.Dto.DoctorSpecializationDto;
 import com.riyality.Dto.DoctorSpecializationDtoWrapper;
-import com.riyality.service.DropdownService;
 
 @Controller
 @RequestMapping( "/drop-downs" )

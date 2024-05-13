@@ -25,13 +25,13 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
-import com.riyality.Dto.doctors.DoctorResponseDto;
-import com.riyality.Dto.patients.PatientResponseDto;
 import com.riyality.Dto.prescriptions.MedicineResponseDto;
 import com.riyality.Dto.prescriptions.PrescriptionResponseDto;
 import com.riyality.service.HrService;
 import com.riyality.service.PatientService;
-import com.riyality.service.PrescriptionServiceImpl;
+import com.riyality .service.PrescriptionServiceImpl;
+import com.riyality.Dto.doctors.DoctorResponseDto;
+import com.riyality.Dto.patients.PatientResponseDto;
 
 @RestController
 public class PrescriptionReportController {

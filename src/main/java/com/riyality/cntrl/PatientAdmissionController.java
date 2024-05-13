@@ -3,6 +3,7 @@ package com.riyality.cntrl;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,19 +17,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.dropdowns.MedicineTypeDto;
-import com.riyality.Dto.patients.BillRequestDto;
-import com.riyality.Dto.patients.DischargeResponseDto;
-import com.riyality.Dto.patients.PatientAdmissionRequestDto;
-import com.riyality.Dto.patients.PatientResponseDto;
-import com.riyality.Dto.wards.WardResponseDto;
 import com.riyality.constants.MessageConstants;
 import com.riyality.service.DropdownService;
 import com.riyality.service.HrService;
 import com.riyality.service.PatientAdmissionService;
 import com.riyality.service.PatientService;
 import com.riyality.service.WardService;
+import com.riyality.Dto.doctors.DoctorResponseDto;
+import com.riyality.Dto.patients.BillRequestDto;
+import com.riyality.Dto.patients.DischargeResponseDto;
+import com.riyality.Dto.patients.PatientAdmissionRequestDto;
+import com.riyality.Dto.patients.PatientResponseDto;
+import com.riyality.Dto.wards.WardResponseDto;
 
 @Controller
 @RequestMapping( "/admissions" )
@@ -71,7 +72,7 @@ public class PatientAdmissionController {
 	}
 
 	@PostMapping
-	public String addAdmission( @ModelAttribute PatientAdmissionRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
+	public String addAdmission( @Valid @ModelAttribute PatientAdmissionRequestDto dto, Model model, HttpSession session, RedirectAttributes ra ) {
 
 		String user = ( String ) session.getAttribute( "username" );
 

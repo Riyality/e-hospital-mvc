@@ -26,17 +26,10 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="height-90">
 		<div class="main-content  ">
-			<!-- Modal -->
-			<div class="modal fade" id="addUserModel" tabindex="-1"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-header">
+		
+			<div class="container-fluid">
 							<h5 class="modal-title" id="exampleModalLabel">Update staff</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true" onclick="window.history.back()">x</span>
-							</button>
+							
 						</div>
 						<div class="modal-body">
 							<form class="login-form" action="/hrs/staffs/update" method="post">
@@ -104,8 +97,8 @@
 
 									<div class="col-md-6">
 										<label class="col-form-label spti-label">Status</label> <select
-											name="status" class="col-md-12 spti-inpt">
-											<option disabled="disabled" selected>Select status</option>
+											name="status" class="col-md-12 spti-inpt" value="${staff.status }">
+											<!-- <option disabled="disabled" selected>Select status</option> -->
 											<option value="Active">Active</option>
 											<option value="Inactive">Inactive</option>
 											<option value="Away">Away</option>
@@ -130,8 +123,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 	<script type="text/javascript">
 		$(window).on('load', function() {
 			$('#addUserModel').modal('show');
