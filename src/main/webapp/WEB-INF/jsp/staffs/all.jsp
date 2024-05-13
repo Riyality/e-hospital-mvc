@@ -85,7 +85,7 @@
 							<td style="width: 10%;"><span class="staff-active"> ${user.status}</span></td>
 
 							<td style="width: 5%;"><a
-								href="http://localhost:7171/hrs/staffs/id?id=${user.id }"><i
+								href="http://localhost:8181/hrs/staffs/id?id=${user.id }"><i
 									class="fa fa-pencil  edit-icon" style="font-size: 14px"></i></a></td>
 
 						</tr>

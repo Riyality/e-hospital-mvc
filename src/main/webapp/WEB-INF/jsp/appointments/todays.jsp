@@ -82,7 +82,7 @@
 							<td style="width:15%;">${user.status}</td>
 
 							<td style="width:5%;"><a
-								href="http://localhost:7171/appointments/id/${user.id }"><i
+								href="http://localhost:8181/appointments/id/${user.id }"><i
 									class="fa fa-pencil edit-icon" style="font-size: 14px"></i></a></td>
 
 						</tr>

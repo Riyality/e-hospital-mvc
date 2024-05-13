@@ -96,7 +96,7 @@ public class HrController {
 
 	@GetMapping( "/doctors/id" )
 	public String selectDoctorById( @RequestParam long id, Model model, HttpSession session ) {
-
+        System.out.println("call");
 		String user = ( String ) session.getAttribute( "username" );
 
 		DoctorResponseDto result = hrService.getDoctorById( id );
@@ -119,7 +119,7 @@ public class HrController {
 
 	@PostMapping( "/doctors/update" )
 	public String updateDoctor(@Valid @ModelAttribute DoctorRequestDto doctorDto, Model model, HttpSession session, RedirectAttributes ra ) {
-
+		 System.out.println("call doctor");
 		String user = ( String ) session.getAttribute( "username" );
 
 		if ( user != null ) {
@@ -211,7 +211,7 @@ public class HrController {
 
 			if ( result != null ) {
 				model.addAttribute( "staff", result );
-				return "doctors/update";
+				return "staffs/update";
 			} else {
 				model.addAttribute( "errorMsg", "Unable to update" );
 				return "error";

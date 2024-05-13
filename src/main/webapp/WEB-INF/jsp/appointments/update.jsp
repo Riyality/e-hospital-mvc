@@ -26,18 +26,11 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<div class="height-90">
 		<div class="main-content  ">
-			<!-- Modal -->
-			<div class="modal fade" id="addUserModel" tabindex="-1"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-md">
-					<div class="modal-content">
-						<div class="modal-header">
+		
+			<div class="container-fluid">
 							<h5 class="modal-title" id="exampleModalLabel">Update
 								Appoinment</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true" onclick="window.history.back()">x</span>
-							</button>
+							
 						</div>
 						<div class="modal-body">
 							<form class="login-form" action="/appointments/update" method="post">
@@ -145,9 +138,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
+			
 	<script type="text/javascript">
 		$(window).on('load', function() {
 			$('#addUserModel').modal('show');
