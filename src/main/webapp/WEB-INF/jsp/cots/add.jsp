@@ -24,10 +24,12 @@
 
 <body>
 	<jsp:include page="../common/header.jsp"></jsp:include>
-	<div class="height-90">
+	
+		
+ <div class="height-90">
 		<div class="main-content  ">
 		
-			<div class="container-fluid">
+			<div class="container-fluid"> 
 							<h5 class="modal-title" id="exampleModalLabel">Add Cot</h5>
 							
 						</div>
@@ -64,7 +66,7 @@
 								<div class="col-md-8">
 
 									<button type="submit"
-										class="btn btn-warning btn-sm add-btn float-end Spti-btn">Add</button>
+										class="btn btn-warning btn-sm add-btn float-end ">Add</button>
 									<button type="button"
 										class="btn btn-secondary btn-sm cancel-btn float-end mx-1"
 										onclick="window.history.back()">Cancel</button>
@@ -73,6 +75,7 @@
 						</div>
 					</div>
 				</div>
+				
 		
 	<script type="text/javascript">
 		$(window).on('load', function() {

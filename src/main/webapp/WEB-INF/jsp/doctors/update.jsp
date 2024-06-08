@@ -138,7 +138,7 @@
 
 									<div class="col-md-6">
 										<label class="col-form-label spti-label">Joining date</label>
-										<input type="datetime-local" name="joiningDate"
+										<input type="date" name="joiningDate"
 											class="col-md-12 spti-inpt" value="${doctor.joiningDate}">
 									</div>
 
@@ -158,7 +158,7 @@
 								<div class="col-md-12">
 
 									<button type="submit"
-										class="btn btn-warning btn-sm add-btn float-end Spti-btn">Update</button>
+										class="btn btn-warning btn-sm add-btn float-end ">Update</button>
 									<button type="button"
 										class="btn btn-secondary btn-sm cancel-btn float-end mx-1"
 										onclick="window.history.back()">Cancel</button>

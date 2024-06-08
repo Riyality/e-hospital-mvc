@@ -1,5 +1,6 @@
 package com.riyality.Dto.doctors;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -24,7 +25,7 @@ public class DoctorContent {
 	private String availableDays;
 	private String availableTimeSlots;
 
-	@DateTimeFormat( pattern = "yyyy-MM-dd'T'HH:mm" )
-	private LocalDateTime joiningDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate joiningDate;
 	private String qualifications;
 }
