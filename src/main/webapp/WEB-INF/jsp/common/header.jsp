@@ -103,50 +103,50 @@
 					<c:choose>
 						<c:when test="${sessionScope.role.equals('HR') }">
 							<li style="left: 15px; position: absolute; margin-top: -10px;"><a
-								href="/appointments/todays" class="nav_link"> <span
-									class="nav_name btn btn-info btn-sm Spti-btn"
+								href="/appointments/todays" class="nav_link" style="color:#dadbdd;"> <span
+									class="nav_name menu"
 									style="margin-right: 10px; color: black;">Today's
 										appointments</span>
 							</a></li>
 						</c:when>
 						<c:when test="${sessionScope.role.equals('Receptionist') }">
 							<li style="left: 15px; position: absolute; margin-top: -10px;"><a
-								href="/appointments/todays" class="nav_link"> <span
-									class="nav_name btn btn-info btn-sm Spti-btn"
+								href="/appointments/todays" class="nav_link" style="color:#dadbdd;"> <span
+									class="nav_name menu" 
 									style="margin-right: 10px; color: black;">Today's
 										appointments</span>
 							</a></li>
 						</c:when>
 						<c:otherwise>
 							<li style="left: 15px; position: absolute; margin-top: -10px;"><a
-								href="/appointments/todays/for-doctor" class="nav_link"> <span
-									class="nav_name btn btn-info btn-sm Spti-btn"
+							class="nav_link" href="/appointments/todays/for-doctor" style="color:#dadbdd;"> <span
+									class="nav_name menu" 
 									style="margin-right: 10px; color: black;">Today's
 										appointments</span>
 							</a></li>
 
 							<li
-								style="left: 15px; position: absolute; margin-top: -10px; left: 199px"><a
-								href="/admissions/current-admissions" class="nav_link"> <span
-									class="nav_name btn btn-info btn-sm Spti-btn"
+								style="left: 15px; position: absolute; margin-top: -10px; left: 220px"><a
+								href="/admissions/current-admissions" class="nav_link" style="color:#dadbdd;"> <span
+									class="nav_name menu"
 									style="margin-right: 10px; color: black;">Current
 										Admissions</span>
 							</a></li>
 						</c:otherwise>
 					</c:choose>
 
-					<li><img alt=""
+					<%-- <li><img alt=""
 						style="width: 215px; height: 46px; margin-right: 50px;"
-						src="${pageContext.request.contextPath}/images/13.jpg"></li>
+						src="${pageContext.request.contextPath}/images/13.jpg"></li> --%>
 
-					<li class="nav-item dropdown notification"><a
+					<li class="nav-item dropdown notification "><a
 						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 						role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="fa-regular fa-bell"></i><span>20</span>
+							<i class="fa-regular fa-bell bell"></i><span>20</span>
 					</a>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
 
-							<li class="px-3 py-2 notification-top border-bottom">All
+							<li class="px-3 py-2 notification-top border-bottom ">All
 								Notification</li>
 							<li class=" mt-2 border-bottom">
 								<div class="d-flex justify-content-between align-items-center">
@@ -216,9 +216,9 @@
 				<button type="button" class="btn-close" aria-label="Close"></button>
 
 				<a href="/cots/addCotForm" class="nav_link"> <img alt=""
-					src="${pageContext.request.contextPath}/images/logo.png"
+					src="${pageContext.request.contextPath}/images/riyalityImg.png"
 					style="width: 36px; height: 36px; margin-left: 0px;"> <span
-					class="nav_name" style="font-size: 18px">Anjali Hospital</span>
+					class="nav_name" style="font-size: 18px">riyality</span>
 				</a>
 
 				<%--  Anjali Hospital --%>
@@ -226,24 +226,24 @@
 					<ul style="padding: 5px !important;">
 						<c:choose>
 							<c:when test="${sessionScope.role.equals('HR') }">
-								<a href="/dashboards/hr" class="nav_link"> <i
-									class='bx bxs-dashboard'></i> <span class="nav_name">Dashboard</span></a>
+								<a href="/dashboards/hr" class="nav_link" style="color:#dadbdd;"> <i
+									class='bx bxs-dashboard'></i> <span class="nav_name menu">Dashboard</span></a>
 
 								<li class=" nav-item dropdown" id="li-task"><a
 									class="nav_link " data-bs-toggle="collapse"
 									href="#multiCollapseExample4" role="button"
 									aria-expanded="false" aria-controls="multiCollapseExample4"
 									id="link-task"> <i class="fa fa-user-md" aria-hidden="true"></i>
-										<span class="nav_name dropdownIcon" id="task-name-module">Doctors
+										<span class="nav_name dropdownIcon menu" id="task-name-module">Doctors
 									</span>
 								</a>
 									<ul class="collapse multi-collapse sub-menu mt-0 pt-0"
 										id="multiCollapseExample4">
 										<a href="/hrs/addDoctorForm" class="nav_link subMenulink">
-											<span class="nav_name">Add Doctor</span>
+											<span class="nav_name menu">Add Doctor</span>
 										</a>
 										<a href="/hrs/doctors" class="nav_link subMenulink"><span
-											class="nav_name">All Doctors</span></a>
+											class="nav_name menu">All Doctors</span></a>
 									</ul></li>
 
 								<li class=" nav-item dropdown" id="li-task"><a
@@ -252,16 +252,16 @@
 									aria-expanded="false" aria-controls="multiCollapseExample5"
 									id="link-task"> <i
 										class="fa-solid fa-house-chimney-medical"></i> <span
-										class="nav_name dropdownIcon" id="task-name-module">Wards
+										class="nav_name dropdownIcon menu" id="task-name-module">Wards
 									</span>
 								</a>
 									<ul class="collapse multi-collapse sub-menu"
 										id="multiCollapseExample5">
 										<a href="/wards/addWardForm" class="nav_link subMenulink">
-											<span class="nav_name">Add Ward</span>
+											<span class="nav_name menu">Add Ward</span>
 										</a>
 										<a href="/wards" class="nav_link subMenulink"> <span
-											class="nav_name">All Wards</span>
+											class="nav_name menu">All Wards</span>
 										</a>
 									</ul></li>
 
@@ -270,64 +270,67 @@
 									href="#multiCollapseExample6" role="button"
 									aria-expanded="false" aria-controls="multiCollapseExample6"
 									id="link-task"> <i class="fa-solid fa-user-nurse"></i> <span
-										class="nav_name dropdownIcon" id="task-name-module">Staff
+										class="nav_name dropdownIcon menu" id="task-name-module">Staff
 									</span>
 								</a>
 									<ul class="collapse multi-collapse sub-menu"
 										id="multiCollapseExample6">
 										<li><a href="/hrs/addStaffForm"
-											class="nav_link subMenulink"> <span class="nav_name">Add
-													Staff</span></a></li>
+											class="nav_link subMenulink "><span class="nav_name menu">Add Staff</span></a></li>
 										<li><a href="/hrs/staffs" class="nav_link subMenulink">
-												<span class="nav_name">All Staff</span>
+												<span class="nav_name menu">All Staff</span>
 										</a></li>
 									</ul></li>
 
 								<li><a href="/cots/addCotForm" class="nav_link"><i
 										class="fa fa-bed" aria-hidden="true"></i> <span
-										class="nav_name">Add Cot</span> </a></li>
+										class="nav_name menu">Add Cot</span> </a></li>
 
 							</c:when>
 
 							<c:when test="${sessionScope.role.equals('Receptionist') }">
 								<li><a href="/dashboards/hr" class="nav_link"> <i
-										class='bx bxs-dashboard'></i> <span class="nav_name">Dashboard</span>
+										class='bx bxs-dashboard'></i> <span class="nav_name menu">Dashboard</span>
 								</a></li>
 								<li><a href="/appointments/appointmentForm"
 									class="nav_link"> <i class="fa-regular fa-calendar-check"></i>
-										<span class="nav_name">Appointment</span>
+										<span class="nav_name menu">Appointment</span>
 								</a></li>
 
 								<li><a href="/patients/add-form" class="nav_link"> <i
 										class="fa-solid fa-hospital-user" style="color: #030303;"></i><span
-										class="nav_name">Add Patient</span>
+										class="nav_name menu">Add Patient</span>
 								</a></li>
-								<li><a href="/patients" class="nav_link"><i
+								<li><a href="/showPatients" class="nav_link"><i
 										class="fa-solid fa-hospital-user" style="color: #030303;"></i>
-										<span class="nav_name">All Patients</span> </a></li>
+										<span class="nav_name menu">All Patients</span> </a></li>
+							
 							</c:when>
 
 							<c:when test="${sessionScope.role.equals('Doctor') }">
 								<li><a href="/dashboards/hr" class="nav_link"> <i
-										class='bx bxs-dashboard'></i> <span class="nav_name">Dashboard</span>
+										class='bx bxs-dashboard'></i> <span class="nav_name menu">Dashboard</span>
 								</a></li>
 								<li><a href="/patients/add-form" class="nav_link"> <i
-										class="fa-solid fa-hospital-user"></i><span class="nav_name">Add
+										class="fa-solid fa-hospital-user"></i><span class="nav_name menu">Add
 											Patient</span>
 								</a></li>
 								<li><a href="/patients" class="nav_link"><i
-										class="fa-solid fa-hospital-user"></i> <span class="nav_name">All
+										class="fa-solid fa-hospital-user"></i> <span class="nav_name menu">All
 											Patients</span> </a></li>
 								</a>
 								</li>
+									<li><a href="/showPatients" class="nav_link"><i
+										class="fa-solid fa-hospital-user" style="color: #030303;"></i>
+										<span class="nav_name menu">Records </span> </a></li>
 							</c:when>
 						</c:choose>
 					</ul>
 
 				</div>
 			</div>
-			<img class="spti-savegirlsimg" src="/images/1.webp"
-				alt="Girl in a jacket" width="180" height="110">
+			<!-- <img class="spti-savegirlsimg" src="/images/1.webp"
+				alt="Girl in a jacket" width="180" height="110"> -->
 	</div>
 	</nav>
 	</div>

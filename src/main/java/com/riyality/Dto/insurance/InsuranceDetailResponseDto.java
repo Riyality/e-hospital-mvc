@@ -1,5 +1,6 @@
 package com.riyality.Dto.insurance;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,6 +18,6 @@ public class InsuranceDetailResponseDto {
 	private Long id;
 	private String policyNumber;
 	private String providerName;
-	@DateTimeFormat( pattern = "yyyy-MM-dd'T'HH:mm" )
-	private LocalDateTime expiryDate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate expiryDate;
 }

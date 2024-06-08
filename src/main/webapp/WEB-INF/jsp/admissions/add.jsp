@@ -69,13 +69,18 @@
 
 									<div class="col-md-6">
 										<label class="col-form-label spti-label">Admission
-											Date</label> <input type="datetime-local" name="admissionDate"
+											Date</label> <input type="date" name="admissionDate"
 											class="col-md-12 spti-inpt">
 									</div>
 
 									<div class="col-md-6">
 										<label class="col-form-label spti-label">Discharge
-											Date</label> <input type="datetime-local" name="dischargeDate"
+											Date</label> <input type="date" name="dischargeDate"
+											class="col-md-12 spti-inpt">
+									</div>
+									<div class="col-md-6">
+										<label class="col-form-label spti-label">Diagnosis</label> <input
+											type="text" name="diagnosis"
 											class="col-md-12 spti-inpt">
 									</div>
 

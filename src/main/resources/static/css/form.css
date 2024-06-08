@@ -58,13 +58,25 @@
 .mandatory-sign {
 	color: red;
 }
+ .add-btn:hover { 
+  background-color: #008000;
+  color: #fff;
+  border-color: gray; 
+}
 
+.add-btn{
+	background: lightGreen;
+	border-color:gray;
+    color: black;
+}
 .add-btn {
 	margin-top: 20px;
 }
 
 .cancel-btn {
+	background:#c0c0c0;
 	margin-top: 20px;
+	color:black;
 }
 
 .modal-title {

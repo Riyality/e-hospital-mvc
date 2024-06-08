@@ -89,7 +89,7 @@
 								<div class="col-md-12">
 
 									<button type="submit"
-										class="btn btn-warning btn-sm add-btn float-end Spti-btn">Add</button>
+										class="btn btn-warning btn-sm add-btn float-end ">Add</button>
 									<button type="button"
 										class="btn btn-secondary btn-sm cancel-btn float-end mx-1"
 										onclick="window.history.back()">Cancel</button>
