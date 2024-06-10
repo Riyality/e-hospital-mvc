@@ -126,7 +126,7 @@
 
 					<div class="col-md-6">
 						<label class="col-form-label spti-label">Prescription Date</label>
-						<input type="datetime-local" name="prescriptionDate"
+						<input type="date" name="prescriptionDate"
 							class="col-md-12 spti-inpt" id="prescriptionDate">
 					</div>
 					<div class="col-md-2">
@@ -139,6 +139,10 @@
 						</select>
 					</div>
 					
+					<div class="col-md-3">
+						<label class="col-form-label spti-label">Diagnosis</label> <input
+							type="text" name="diagnosis" class="col-md-12 spti-inpt" id="diagnosis">
+					</div>
 					<div class="col-md-3">
 						<label class="col-form-label spti-label">Medicine name</label> <input
 							type="text" name="medicineName" class="col-md-12 spti-inpt">
@@ -289,12 +293,16 @@
 			let doctorId = doctorSelect.value;
 			
 			let prescriptionDate = document.getElementById('prescriptionDate').value;
+			let diagnosis=document.getElementById('diagnosis').value;
+			
+		
 			
 			let obj = {
 					patientId:patientId,
 					doctorId:doctorId,
 					prescriptionDate:prescriptionDate,
-					medicines:medicines
+					medicines:medicines,
+					diagnosis:diagnosis
 			};
 
 			var xhttp = new XMLHttpRequest();

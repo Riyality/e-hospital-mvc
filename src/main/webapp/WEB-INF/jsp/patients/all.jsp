@@ -69,7 +69,7 @@
 							<td style="width: 10%;"><c:choose>
 									<c:when test="${user.admissionStatus =='OPD' }">
 										<a style="margin-right: 10px;" class="Patients-status"
-											href="http://localhost:7171/admissions/patient/${user.id }">Admit</a>
+											href="http://localhost:8181/admissions/patient/${user.id }">Admit</a>
 									</c:when>
 									<c:otherwise>
 										<a style="margin-right: 10px;" class="Patients-status"

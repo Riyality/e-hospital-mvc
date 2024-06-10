@@ -24,12 +24,9 @@
 
 <body>
 	<jsp:include page="../common/header.jsp"></jsp:include>
-			
-		  <div class="row">
-			<div class="col-md-8">
+		<div class="height-90">
 		<div class="main-content  ">
-		
-		 <div class="container">
+			<div class="modal-body">
 
 			<h5 class="">Add Doctor</h5>
 			<form class="login-form" action="doctors" method="post">
@@ -102,7 +99,7 @@
 
 					<div class="col-md-6">
 						<label class="col-form-label spti-label">Joining date</label> <input
-							type="datetime-local" name="joiningDate"
+							type="date" name="joiningDate"
 							class="col-md-12 spti-inpt">
 					</div>
 
@@ -121,7 +118,7 @@
 				<div class="col-md-12">
 
 					<button type="submit"
-						class="btn btn-warning btn-sm add-btn float-end Spti-btn">Add</button>
+						class="btn btn-warning btn-sm add-btn float-end ">Add</button>
 					<button type="button"
 						class="btn btn-secondary btn-sm cancel-btn float-end mx-1"
 						onclick="window.history.back()">Cancel</button>
@@ -130,7 +127,7 @@
 		</div>
 	</div>
 	</div>
-  </div>
+  
 	<script type="text/javascript">
 		$(window).on('load', function() {
 			$('#addUserModel').modal('show');

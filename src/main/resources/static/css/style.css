@@ -56,8 +56,9 @@ a {
   transition: .5s;
   /* background-color: #c3b5fc; */
   box-shadow: 0 0.12rem 0.35rem rgb(18 38 63 / 15%);
-  /* background: linear-gradient(90deg, rgb(255 207 0) 0%, rgb(255 162 0) 100%); */
-  background: linear-gradient(90deg, #ffffff 0%, #aaaaaa 100%); 
+ /*  background: linear-gradient(90deg, rgb(255 207 0) 0%, rgb(255 162 0) 100%); 
+  background:linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);;  */
+  background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 .header_toggle {
@@ -92,7 +93,7 @@ a {
   transition: .5s;
   z-index: var(--z-fixed);
   background-color:#e6effc;
-  background: linear-gradient(90deg, #ffffff 0%, #aaaaaa 100%);
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
 }
 
 .nav {
@@ -103,7 +104,6 @@ a {
   overflow: hidden
 }
 
-.nav_logo,
 .nav_link {
   display: grid;
   grid-template-columns: max-content max-content;
@@ -129,14 +129,20 @@ a {
     font-size: 1.3rem !important;
 }
 
-.nav_link {
+.nav_link  {
+	text-decoration:none;
     position: relative;
     color: var(- -first-color-light);
-    padding-top: 0.7rem; padding-bottom : 0.7rem;
+    padding-top: 0.7rem;
+     padding-bottom : 0.7rem;
     transition: .3s;
     /* color: ver(- -font-color); */
     color:white;
     padding-bottom: 0.2rem;
+    
+}
+.nav_link .nav_name{
+	text-decoration:none;
 }
 
 .nav_link i{
@@ -144,6 +150,7 @@ a {
 }
 
 .nav-link:focus, .nav-link:hover {
+	text-decoration:none;
     cursor: pointer;
   color:var(--font-color);
 }
@@ -267,6 +274,74 @@ a {
   width: 50%;
 }
 
+.menu {
+    font-size: 16px;
+    color: black; /* Default text color */
+    text-decoration: none; /* Remove underline by default */
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+
+  /* Define animation for underline effect */
+  .menu::after {
+    content: ''; /* Create pseudo-element for underline */
+    display: block;
+    width: 0; /* Start with zero width */
+    height: 2px; /* Set underline thickness */
+    background-color: orange; /* Set underline color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease; /* Smooth transition for underline */
+  }
+
+  /* Increase underline width on hover */
+  .menu:hover::after {
+    width: 100%; /* Full width underline on hover */
+  }
+
+  /* Change text color to red on hover */
+  .menu:hover {
+    color: red;
+  }
+
+.menu {
+    font-size: 16px;
+    color: #818d97;  /* Default text color */
+    text-decoration: none; /* Remove default underline */
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+
+  /* Define animation for underline effect */
+  .menu::after {
+    content: ''; /* Create pseudo-element for underline */
+    display: block;
+    width: 0; /* Start with zero width */
+    height: 2px; /* Set underline thickness */
+    background-color: orange; /* Set underline color */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease; /* Smooth transition for underline */
+  }
+
+  /* Increase underline width on hover */
+  .menu:hover::after {
+    width: 100%; /* Full width underline on hover */
+  }
+
+  /* Change text color to red on hover */
+  .menu:hover {
+    color:black;
+  }
+ .bell:hover {
+  color:red; /* adjust brightness to make it brighter on hover */
+  cursor: pointer; /* change cursor to pointer on hover */
+}
+
 .side-navbar{
   max-height: 80vh;
   /* overflow-y: auto; */
@@ -303,6 +378,9 @@ a {
     text-align: left;
     padding-left: 0px;
 }
+.side-navbar ul li a{
+	text-decoration: none;
+}
 
 .accordion-flush .accordion-item {
     border-right: 0;
@@ -314,14 +392,7 @@ a {
 }
 
 
-.add-btn:hover { 
-  background-color: #920707;
-  color: #fff; 
-}
-.add-btn{
-	background: #f63232;
-    color: white;
-}
+
 
 .dropdown-menu {
     font-size: 13px !important;
@@ -478,12 +549,6 @@ a {
     display: inline !important; 
 }
 
-.Spti-btn {
-	background: linear-gradient(90deg, #a9ffc6 0%, #8ecfff 100%) !important;
-	color:#333;
-	border: none;
-
-}
 
 
 
