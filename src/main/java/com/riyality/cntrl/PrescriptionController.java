@@ -59,7 +59,7 @@ public class PrescriptionController {
 
 	}
 
-	@ResponseBody
+	
 	@PostMapping
 	public String addPrescription( @RequestBody PrescriptionRequestDto dto, Model model, RedirectAttributes ra ) {
 		String result = prescriptionService.addPrescription( dto );
@@ -71,6 +71,7 @@ public class PrescriptionController {
 			ra.addFlashAttribute( "errorMessage", MessageConstants.ADD_PRESCRIPTION_ERROR_MESSAGE );
 			return "error";
 		}
+		
 
 	}
 

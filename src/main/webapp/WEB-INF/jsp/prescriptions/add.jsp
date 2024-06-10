@@ -29,6 +29,65 @@
 #selected-medicine-block tr td {
 	padding-right: 25px;
 }
+
+/* Ensure the table is displayed */
+#prescription-table {
+    display: table; 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 20px 0;
+}
+
+/* Style the table header */
+#prescription-table thead th {
+    background-color:  #cccccc;
+    font-size: 13px; 
+    color: #333; 
+    text-align: left; 
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Style the table rows and cells */
+#prescription-table tbody td {
+    padding: 12px; 
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+}
+
+/* Ensure the medicine name has a consistent font size and padding */
+#prescription-table tbody td .h6-label, 
+#prescription-table tbody td small {
+    font-size: 13px; /* Ensure consistency with other table cells */
+    margin: 0; 
+    padding: 0;
+    display: block;
+}
+
+/* Add hover effect for table rows */
+#prescription-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+#prescription-table tbody .action-button {
+    background-color: #4CAF50;
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none; 
+    border-radius: 4px; 
+}
+
+#prescription-table tbody .action-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
 </style>
 </head>
 
@@ -79,6 +138,7 @@
 							</c:forEach>
 						</select>
 					</div>
+					
 					<div class="col-md-3">
 						<label class="col-form-label spti-label">Medicine name</label> <input
 							type="text" name="medicineName" class="col-md-12 spti-inpt">
@@ -151,72 +211,77 @@
 		let medicines = [];
 		let rowCount = 1;
 		function saveMedicine() {
-			let medicineBlock = document
-					.getElementById('prescription-table');
-			let medicine = {
-				medicineType : document.querySelector('[name="medicineType"]').value,
-				medicineName : document.querySelector('[name="medicineName"]').value,
-				dosage : document.querySelector('[name="dosage"]').value,
-				instructions : document.querySelector('[name="instructions"]').value,
-				numDays : document.querySelector('[name="numDays"]').value,
-				tabletQuantity : document
-						.querySelector('[name="tabletQuantity"]').value
-			};
+		    let medicineBlock = document.getElementById('prescription-table');
+		    let medicine = {
+		        medicineType: document.querySelector('[name="medicineType"]').value,
+		        medicineName: document.querySelector('[name="medicineName"]').value,
+		        dosage: document.querySelector('[name="dosage"]').value,
+		        instructions: document.querySelector('[name="instructions"]').value,
+		        numDays: document.querySelector('[name="numDays"]').value,
+		        tabletQuantity: document.querySelector('[name="tabletQuantity"]').value
+		    };
 
-			medicines.push(medicine);
-			medicineBlock.style.display="inline-table";
-			medicineBlock.style.width="100%";
-			 let tr = document.createElement( 'tr' );
-	           
-	            let td1 = document.createElement( 'td' );
-	            td1.innerHTML = document.querySelector('[name="medicineType"]').value;
-	            let td2 = document.createElement( 'td' );
-	            let div = document.createElement( 'div' );
-	            let h6 = document.createElement( 'h6' );
-	            h6.setAttribute( "class", "h6-label" );
-	            h6.innerHTML = document.querySelector('[name="medicineName"]').value;
-	            let p = document.createElement( 'small' );
-	            p.setAttribute( 'class', 'm-0 p-0' );
-	            p.innerHTML = document.querySelector('[name="instructions"]').value;
-	            td2.appendChild( h6 );
-	            td2.appendChild( p );
+		    medicines.push(medicine);
+		    medicineBlock.style.display = "inline-table";
+		    medicineBlock.style.width = "100%";
 
-	            let td3 = document.createElement( 'td' );
-	            td3.innerHTML = document.querySelector('[name="dosage"]').value;
+		    let tr = document.createElement('tr');
 
-	            let td4 = document.createElement( 'td' );
-	            td4.innerHTML = "Qnty: "+document
-				.querySelector('[name="tabletQuantity"]').value+" "+document.querySelector('[name="numDays"]').value+" days";
+		    let td1 = document.createElement('td');
+		    td1.innerHTML = document.querySelector('[name="medicineType"]').value;
+		    let td2 = document.createElement('td');
+		    let div = document.createElement('div');
+		    let h6 = document.createElement('h6');
+		    h6.setAttribute("class", "h6-label");
+		    h6.innerHTML = document.querySelector('[name="medicineName"]').value;
+		    let p = document.createElement('small');
+		    p.setAttribute('class', 'm-0 p-0');
+		    p.innerHTML = document.querySelector('[name="instructions"]').value;
+		    td2.appendChild(h6);
+		    td2.appendChild(p);
 
-	            let td5 = document.createElement( 'td' );
-	            let i1 = document.createElement( 'i' );
-	            i1.setAttribute( 'class', "fa fa-pencil-square-o mx-3 text-primary" );
-	            i1.setAttribute( 'aria-hidden', 'true' );
+		    let td3 = document.createElement('td');
+		    td3.innerHTML = document.querySelector('[name="dosage"]').value;
 
-	            let i2 = document.createElement( 'i' );
-	            i2.setAttribute( 'class', "fa fa-trash text-danger" );
-	            i2.setAttribute( 'aria-hidden', 'true' );
+		    let td4 = document.createElement('td');
+		    td4.innerHTML = "Qnty: " + document.querySelector('[name="tabletQuantity"]').value + " " + document.querySelector('[name="numDays"]').value + " days";
 
-	            td5.appendChild( i1 );
-	            td5.appendChild( i2 );
+		    let td5 = document.createElement('td');
+		    let i1 = document.createElement('i');
+		    i1.setAttribute('class', "fa fa-pencil-square-o mx-3 text-primary");
+		    i1.setAttribute('aria-hidden', 'true');
 
-	            tr.appendChild( td1 );
-	            tr.appendChild( td2 );
-	            tr.appendChild( td3 );
-	            tr.appendChild( td4 );
-	            tr.appendChild( td5 );
-	            document.getElementById( 'precscription-body' ).appendChild( tr );
+		    let i2 = document.createElement('i');
+		    i2.setAttribute('class', "fa fa-trash text-danger");
+		    i2.setAttribute('aria-hidden', 'true');
+		    i2.setAttribute('onclick', 'deleteRow(this)'); // Add this line to set the onclick event
 
-			document.querySelector('[name="medicineType"]').value = "select type";
-			document.querySelector('[name="medicineName"]').value = "";
-			document.querySelector('[name="dosage"]').value = "";
-			document.querySelector('[name="instructions"]').value = "";
-			document.querySelector('[name="numDays"]').value = "";
-			document.querySelector('[name="tabletQuantity"]').value = "";
+		    td5.appendChild(i1);
+		    td5.appendChild(i2);
 
-			rowCount++;
+		    tr.appendChild(td1);
+		    tr.appendChild(td2);
+		    tr.appendChild(td3);
+		    tr.appendChild(td4);
+		    tr.appendChild(td5);
+		    document.getElementById('precscription-body').appendChild(tr);
 
+		    document.querySelector('[name="medicineType"]').value = "select type";
+		    document.querySelector('[name="medicineName"]').value = "";
+		    document.querySelector('[name="dosage"]').value = "";
+		    document.querySelector('[name="instructions"]').value = "";
+		    document.querySelector('[name="numDays"]').value = "";
+		    document.querySelector('[name="tabletQuantity"]').value = "";
+
+		    rowCount++;
 		}
+
+		function deleteRow(deleteIcon) {
+		    let row = deleteIcon.parentNode.parentNode; // Get the parent row of the clicked delete icon
+		    row.parentNode.removeChild(row); // Remove the row from the table
+		}
+
+		
 
 		function savePrescription() {
 			let patientId = ${patient.id};
@@ -236,13 +301,12 @@
 			xhttp.onreadystatechange = function() {
 				try {
 					if (this.readyState == 4 && this.status == 200) {
-						let data = JSON.parse(this.responseText);
-						console.log(data);
-						$('#addUserModel').modal('hide');
+						let a = document.createElement('a');
+						a.href="http://localhost:8181/patients/details-form/${patient.id }";
+						a.click();
 					}
 				} catch (error) {
-					console.error('An error occurred:', error);
-					$('#addUserModel').modal('hide');
+					
 				}
 			};
 
@@ -285,7 +349,7 @@
 						}
 					}
 				} catch (error) {
-					console.log("error")
+					console.log("error");
 				}
 			}
 			xhr.send();
