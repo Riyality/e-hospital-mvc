@@ -73,7 +73,7 @@
 									</c:when>
 									<c:otherwise>
 										<a style="margin-right: 10px;" class="Patients-status"
-											href="http://localhost:7171/admissions/discharge-info/patient/${user.id }">Discharge</a>
+											href="http://localhost:8181/admissions/discharge-info/patient/${user.id }">Discharge</a>
 									</c:otherwise>
 								</c:choose> <a href="http://localhost:8181/patients/id?id=${user.id }"><i
 									class="fa fa-pencil  edit-icon" style="font-size: 14px"></i></a></td>

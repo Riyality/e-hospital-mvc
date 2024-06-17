@@ -1,5 +1,6 @@
 package com.riyality.Dto.patients;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
@@ -17,12 +18,15 @@ public class PatientAdmissionResponseDto {
 	private Long patientId;
 	private Long wardId;
 	private Long cotId;
-	private LocalDateTime admissionDate;
-	private LocalDateTime dischargeDate;
+	private LocalDate admissionDate;
+	private LocalDate dischargeDate;
 	private Long doctorId;
 	private String nextOfKinName;
 	private String nextOfKinRelationship;
 	private String nextOfKinPhoneNumber;
 	private int branchId;
 	private String admissionStatus;
+	private String patientName;
+	private String contact;
+	private String diagnosis;
 }

@@ -12,4 +12,4 @@ public class HospitalMVCStarter{
 		SpringApplication.run( HospitalMVCStarter.class, args );
 	}
 
-}
+} 
