@@ -23,6 +23,7 @@ import com.riyality.service.DropdownService;
 import com.riyality.service.HrService;
 import com.riyality.service.PatientAdmissionService;
 import com.riyality.service.PatientService;
+import com.riyality.service.TreatmentServiceImpl;
 import com.riyality.service.WardService;
 import com.itextpdf.text.log.SysoCounter;
 import com.riyality.Dto.doctors.DoctorResponseDto;
@@ -30,11 +31,14 @@ import com.riyality.Dto.patients.BillRequestDto;
 import com.riyality.Dto.patients.DischargeResponseDto;
 import com.riyality.Dto.patients.PatientAdmissionRequestDto;
 import com.riyality.Dto.patients.PatientResponseDto;
+import com.riyality.Dto.patients.TreatmentResponceDto;
 import com.riyality.Dto.wards.WardResponseDto;
 
 @Controller
 @RequestMapping( "/admissions" )
 public class PatientAdmissionController {
+	@Autowired
+    private TreatmentServiceImpl service;
 
 	@Autowired
 	private PatientService patientService;
@@ -104,6 +108,10 @@ public class PatientAdmissionController {
 	@GetMapping( "/treatments/admissions/{id}" )
 	public String discharge( @PathVariable Long id, Model model ) {
 		System.out.println(id);
+		List<TreatmentResponceDto> result=service.treatmentList(id);
+    	System.out.println(result);
+         model.addAttribute("listall", result);
+         model.addAttribute("lists", id);
 		List<MedicineTypeDto> medicineTypes = dropdownService.allMedicineTypes();
 		model.addAttribute( "medicineTypes", medicineTypes );
 		model.addAttribute("admission_id", id);
