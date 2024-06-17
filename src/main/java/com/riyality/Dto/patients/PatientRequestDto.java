@@ -64,5 +64,6 @@ public class PatientRequestDto {
 	private LocalDate dateOfBirth;
 	@Size(max = 32)
 	private String admissionStatus;
+	private String diagnosis;
 
 }

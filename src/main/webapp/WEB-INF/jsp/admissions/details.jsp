@@ -53,7 +53,10 @@ pageEncoding = "UTF-8" %>
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <a class="btn btn-sm Spti-btn" href="/prescriptions/addPrescriptions/patient/${patientList.id }">Add prescription</a>
-                                                            <a class="btn btn-sm Spti-btn" href="/admissions/treatments/admissions/1" style="right: 146px">Treatment history</a>
+                                                          <a class="btn btn-sm Spti-btn" 
+   href="/admissions/treatments/admissions/${patientList.id}" 
+   style="right: 146px">Treatment history</a>
+
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <img src="https://picsum.photos/200/300" class="img-thumbnail"

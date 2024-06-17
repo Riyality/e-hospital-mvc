@@ -53,14 +53,15 @@ li {
 						<div class="card">
 							<div class="card-body">
 								<a class="btn btn-sm Spti-btn" href="/prescriptions/addPrescriptions/patient/${patientList.id }">Add prescription</a>
-								<div class="row">
+								 <a class="btn btn-sm Spti-btn" href="/admissions/treatments/admissions/${patientList.id}" style="right: 146px">Treatment history</a>
+                                 <div class="row">
 									<div class="col-md-2">
 										<img src="https://picsum.photos/200/300" class="img-thumbnail"
 											alt="...">
 									</div>
 									<div class="col-md-10">
 										<div class="border-bottom pb-2 my-2">
-											<h2>${patientList.firstName} ${patientList.lastName}</h2>
+											<h2>${patientList.firstName} ${patientList.lastName} </h2>
 											<p class="m-0 p-0">679 padmavati sahakarnagar 01 near
 												power House</p>
 										</div>
