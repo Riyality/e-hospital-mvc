@@ -24,6 +24,7 @@ import com.riyality.service.HrService;
 import com.riyality.service.PatientAdmissionService;
 import com.riyality.service.PatientService;
 import com.riyality.service.WardService;
+import com.itextpdf.text.log.SysoCounter;
 import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.patients.BillRequestDto;
 import com.riyality.Dto.patients.DischargeResponseDto;
@@ -102,9 +103,11 @@ public class PatientAdmissionController {
 
 	@GetMapping( "/treatments/admissions/{id}" )
 	public String discharge( @PathVariable Long id, Model model ) {
+		System.out.println(id);
 		List<MedicineTypeDto> medicineTypes = dropdownService.allMedicineTypes();
 		model.addAttribute( "medicineTypes", medicineTypes );
-		return "admissions/treatment";
+		model.addAttribute("admission_id", id);
+		return "admissions/treatments";
 	}
 
 	@GetMapping( "/current-admissions" )
