@@ -26,7 +26,7 @@
             max-height: 200px; /* Set the max height for the scrollable area */
             overflow-y: auto; /* Enable vertical scrolling */
             font-size: small;
-            height: 10vh;
+            height: 30vh;
             
         }
 
@@ -57,6 +57,9 @@
             border-top: 4px solid transparent;
             animation: spin 1s linear infinite;
             margin-right: 10px;
+        }
+        .btn{
+        margin-top: -100px;
         }
 
 .table{
@@ -154,8 +157,8 @@ height: 10vh}
                     </div>
                 </div>
 
-                <div class="table-container">
-                    <table class="table table-striped table-hover shadow-custom">
+                <div class="table-container" >
+                    <table class="table table-striped table-hover shadow-custom" >
                         <thead>
                             <tr >
                                 <th>Treatment ID</th>
@@ -175,7 +178,7 @@ height: 10vh}
                 </div>
             </div>
              <button class="btn btn-success" id="saveAllButton">Save All</button>
-                    <a href="" id="treatmentListLink">list</a>
+                    
         </div>
     </div>
     <script>
@@ -277,7 +280,6 @@ height: 10vh}
                     quantity: parseInt(quantity),  // Ensure quantity is a number
                     price: parseInt(price),        // Ensure price is a number
                     payment: payment,
-                    
                     admission: parseInt(AdmissionID)  // Ensure admission ID is a number
                 });
             }
@@ -290,9 +292,12 @@ height: 10vh}
                 contentType: 'application/json',
                 data: JSON.stringify(treatments),
                 success: function (response) {
-                 
                     $('#treatmentTableBody').empty();  // Clear the table or update UI based on the response
                     showSuccessMessage();  // Implement this function to display a success message
+
+                    setTimeout(function () {
+                        window.location.reload();  // Redirect to the same page after 3 seconds
+                    }, 3000);
                 },
                 error: function (xhr, status, error) {
                     console.error('Error:', error);
@@ -324,6 +329,7 @@ height: 10vh}
                 alertContainer.removeChild(alert);
             }, 3000);
         }
+
     </script>
 </body>
 
