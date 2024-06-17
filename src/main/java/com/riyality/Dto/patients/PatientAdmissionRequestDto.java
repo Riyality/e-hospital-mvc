@@ -30,4 +30,6 @@ public class PatientAdmissionRequestDto {
 	private int branchId;
 	private String admissionStatus;
 	private String diagnosis;
+	private String patientName;
+	private String contact;
 }
