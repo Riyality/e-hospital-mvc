@@ -23,8 +23,11 @@
 
         .table-container {
             margin-top: 6px;
-            max-height: 230px; /* Set the max height for the scrollable area */
+            max-height: 200px; /* Set the max height for the scrollable area */
             overflow-y: auto; /* Enable vertical scrolling */
+            font-size: small;
+            height: 10vh;
+            
         }
 
         .alert-container {
@@ -56,6 +59,8 @@
             margin-right: 10px;
         }
 
+.table{
+height: 10vh}
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
@@ -74,7 +79,7 @@
         <div class="main-content">
             <h6>Current treatments</h6>
             <div class="alert-container" id="alertContainer"></div>
-            <div class="container mt-5">
+            <div class="container ">
                 <div class="table-container">
                     <table class="table table-striped table-hover shadow-custom" border="1">
                         <thead >
@@ -166,10 +171,11 @@
                             <!-- Table rows will be added here dynamically -->
                         </tbody>
                     </table>
-                    <button class="btn btn-success" id="saveAllButton">Save All</button>
-                    <a href="/treatment/list/${lists.admission}" id="treatmentListLink">list</a>
+                   
                 </div>
             </div>
+             <button class="btn btn-success" id="saveAllButton">Save All</button>
+                    <a href="" id="treatmentListLink">list</a>
         </div>
     </div>
     <script>
