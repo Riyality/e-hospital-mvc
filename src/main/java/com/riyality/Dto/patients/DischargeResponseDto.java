@@ -1,10 +1,10 @@
 package com.riyality.Dto.patients;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.riyality.Dto.cot.CotResponseDto;
 import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.wards.WardResponseDto;
@@ -18,8 +18,8 @@ public class DischargeResponseDto {
 
 	private Long admissionId;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDateTime admissionDate;
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private LocalDate admissionDate;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dischargeDate;

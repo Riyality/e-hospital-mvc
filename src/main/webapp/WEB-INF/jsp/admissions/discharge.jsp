@@ -38,7 +38,7 @@ p {
 		<div class="main-content  ">
 			<div class="modal-body">
 							<h5 class="modal-title" id="exampleModalLabel">Discharge :
-								Sachin Anuse</h5>
+								${data.patient.firstName }  ${data.patient.lastName}</h5>
 							
 						</div>
 						<div class="modal-body">
@@ -62,7 +62,7 @@ p {
 											<div
 												class="col-md-12 border-bottom d-flex justify-content-between align-items-center">
 												<label class="spti-label details-label">Total days:</label>
-												<p class="spti-p">${data.admittedDays }days</p>
+												<p class="spti-p">${data.admittedDays }&nbsp;days</p>
 											</div>
 
 											<div
