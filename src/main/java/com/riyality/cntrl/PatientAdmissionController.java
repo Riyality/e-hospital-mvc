@@ -55,6 +55,7 @@ public class PatientAdmissionController {
 		return "admissions/add";
 
 	}
+	
 
 	@GetMapping( "/patient/{id}" )
 	public String bookAppointmentsForm( Model model, HttpSession session, @PathVariable long id ) {
