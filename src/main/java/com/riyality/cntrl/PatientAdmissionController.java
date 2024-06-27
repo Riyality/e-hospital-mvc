@@ -30,6 +30,7 @@ import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.patients.BillRequestDto;
 import com.riyality.Dto.patients.DischargeResponseDto;
 import com.riyality.Dto.patients.PatientAdmissionRequestDto;
+import com.riyality.Dto.patients.PatientAdmissionResponseDto;
 import com.riyality.Dto.patients.PatientResponseDto;
 import com.riyality.Dto.patients.TreatmentResponceDto;
 import com.riyality.Dto.wards.WardResponseDto;
@@ -141,5 +142,14 @@ public class PatientAdmissionController {
 		model.addAttribute( "patientList", result );
 		return "admissions/details";
 	}
+	@ResponseBody
+	@GetMapping( "/admission-history/patient/{id}" )
+	public List<PatientAdmissionResponseDto> getAdmissionDetailsByPatient( @PathVariable Long id, Model model ) {
+
+		List<PatientAdmissionResponseDto> result = patientService.getAdmissionDetailsByPatient( id );
+		//model.addAttribute( "AdmissionList", result );
+		return result;
+	}
+	
 
 }

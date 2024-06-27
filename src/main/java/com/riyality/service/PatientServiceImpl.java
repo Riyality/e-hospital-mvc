@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.riyality.Dto.patients.PatientAdmissionResponseDto;
 import com.riyality.Dto.patients.PatientPageDto;
 import com.riyality.Dto.patients.PatientRequestDto;
 import com.riyality.Dto.patients.PatientResponseDto;
@@ -106,6 +107,25 @@ public class PatientServiceImpl implements PatientService {
 			ParameterizedTypeReference<List<PatientResponseDto>> responseType = new ParameterizedTypeReference<List<PatientResponseDto>>() {
 			};
 			ResponseEntity<List<PatientResponseDto>> res = template.exchange( url, HttpMethod.GET, entity, responseType );
+			return res.getBody();
+
+		} catch ( Exception e ) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	@Override
+	public List<PatientAdmissionResponseDto> getAdmissionDetailsByPatient(Long id) {
+		RestTemplate template = new RestTemplate();
+		String url = "http://localhost:9696/admissions/admission-history/patient/" + id ;
+		HttpHeaders headers = new HttpHeaders();
+		HttpEntity<String> entity = new HttpEntity<>( "body", headers );
+		try {
+			ParameterizedTypeReference<List<PatientAdmissionResponseDto>> responseType = new ParameterizedTypeReference<List<PatientAdmissionResponseDto>>() {
+			};
+			ResponseEntity<List<PatientAdmissionResponseDto>> res = template.exchange( url, HttpMethod.GET, entity, responseType );
 			return res.getBody();
 
 		} catch ( Exception e ) {

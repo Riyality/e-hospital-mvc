@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.riyality.Dto.patients.PatientResponseDto;
 import com.riyality.Dto.patients.TreatmentRequestDto;
 import com.riyality.Dto.patients.TreatmentResponceDto;
 
@@ -35,7 +34,7 @@ public class TreatmentServiceImpl implements TreatmentService{
 	    try {
 	        System.out.println("Sending request to URL: " + url);
 	        ResponseEntity<String> result = template.exchange(url, HttpMethod.POST, request, String.class);
-	        System.out.println("Response from server: " + result.getBody());
+	        
 	        return result.getBody();
 	    } catch (Exception e) {
 	        e.printStackTrace();
@@ -63,6 +62,27 @@ public class TreatmentServiceImpl implements TreatmentService{
 
 			return null;
 	    }
+
+
+
+	public List<TreatmentResponceDto> getTreatmentDetails(Long admission) {
+		 RestTemplate template = new RestTemplate();
+			String url = "http://localhost:9696/treatments/list/"+admission;
+			HttpHeaders headers = new HttpHeaders();
+			HttpEntity<String> entity = new HttpEntity<>( "body", headers );
+			try {
+				ParameterizedTypeReference<List<TreatmentResponceDto>> responseType = new ParameterizedTypeReference<List<TreatmentResponceDto>>() {
+				};
+				ResponseEntity<List<TreatmentResponceDto>> res = template.exchange( url, HttpMethod.GET, entity, responseType );
+				
+				return res.getBody();
+
+			} catch ( Exception e ) {
+				e.printStackTrace();
+			}
+
+			return null;
+	}
 
 
 
