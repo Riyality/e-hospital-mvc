@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.riyality.Dto.patients.TreatmentRequestDto;
 import com.riyality.Dto.patients.TreatmentResponceDto;
@@ -54,6 +55,13 @@ public class TreatmentController {
          model.addAttribute("listall", result);
          model.addAttribute("lists", admission);
     	return "admissions/add1";
+    }
+    @ResponseBody
+    @GetMapping("/treatmentDetails/id/{admission}")
+    public List<TreatmentResponceDto> getTreatmentDetails(@PathVariable Long admission,Model model) {
+    	List<TreatmentResponceDto> result=service.getTreatmentDetails(admission);
+    	System.out.println(result);
+    	return result;
     }
     
 }

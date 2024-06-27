@@ -33,6 +33,7 @@ import com.riyality.service.PatientService;
 import com.riyality.service.TreatmentServiceImpl;
 import com.riyality.service.WardService;
 
+
 @Controller
 @RequestMapping( "/admissions" )
 public class PatientAdmissionController {
@@ -144,6 +145,7 @@ public class PatientAdmissionController {
 		model.addAttribute( "patientList", result );
 		return "admissions/details";
 	}
+
 	
 
 	@ResponseBody
@@ -157,6 +159,16 @@ public class PatientAdmissionController {
             return "Error discharging patient: " + e.getMessage();
         }
     }
+
+	@ResponseBody
+	@GetMapping( "/admission-history/patient/{id}" )
+	public List<PatientAdmissionResponseDto> getAdmissionDetailsByPatient( @PathVariable Long id, Model model ) {
+
+		List<PatientAdmissionResponseDto> result = patientService.getAdmissionDetailsByPatient( id );
+		//model.addAttribute( "AdmissionList", result );
+		return result;
+	}
+	
 
 
 }

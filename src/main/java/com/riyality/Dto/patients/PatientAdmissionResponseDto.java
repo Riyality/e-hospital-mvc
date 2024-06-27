@@ -21,6 +21,7 @@ public class PatientAdmissionResponseDto {
 	private LocalDate admissionDate;
 	private LocalDate dischargeDate;
 	private Long doctorId;
+	private String doctorName;
 	private String nextOfKinName;
 	private String nextOfKinRelationship;
 	private String nextOfKinPhoneNumber;
