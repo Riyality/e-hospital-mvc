@@ -97,4 +97,24 @@ public class PatientAdmissionServiceImpl implements PatientAdmissionService {
 		return null;
 	}
 
+	@Override
+	public DischargeResponseDto updateStatus(int id) {
+		RestTemplate template = new RestTemplate();
+		String url = "http://localhost:9696/admissions/discharge/patient/" + id;
+		HttpHeaders headers = new HttpHeaders();
+		HttpEntity<String> entity = new HttpEntity<>( "body", headers );
+		try {
+
+			ResponseEntity<DischargeResponseDto> res = template.exchange( url, HttpMethod.POST, entity, DischargeResponseDto.class );
+			return res.getBody();
+
+		} catch ( Exception e ) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	
+
 }

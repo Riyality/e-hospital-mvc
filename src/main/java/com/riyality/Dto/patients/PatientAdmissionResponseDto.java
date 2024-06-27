@@ -28,5 +28,5 @@ public class PatientAdmissionResponseDto {
 	private String admissionStatus;
 	private String patientName;
 	private String contact;
-	private String diagnosis;
+	//private String diagnosis;
 }
