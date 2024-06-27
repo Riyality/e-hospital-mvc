@@ -1,4 +1,4 @@
-package com.riyality.cntrl;
+ package com.riyality.cntrl;
 
 import java.util.List;
 
@@ -17,7 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.riyality.Dto.doctors.DoctorResponseDto;
 import com.riyality.Dto.dropdowns.MedicineTypeDto;
+import com.riyality.Dto.patients.BillRequestDto;
+import com.riyality.Dto.patients.DischargeResponseDto;
+import com.riyality.Dto.patients.PatientAdmissionRequestDto;
+import com.riyality.Dto.patients.PatientResponseDto;
+import com.riyality.Dto.patients.TreatmentResponceDto;
+import com.riyality.Dto.wards.WardResponseDto;
 import com.riyality.constants.MessageConstants;
 import com.riyality.service.DropdownService;
 import com.riyality.service.HrService;
@@ -25,15 +32,7 @@ import com.riyality.service.PatientAdmissionService;
 import com.riyality.service.PatientService;
 import com.riyality.service.TreatmentServiceImpl;
 import com.riyality.service.WardService;
-import com.itextpdf.text.log.SysoCounter;
-import com.riyality.Dto.doctors.DoctorResponseDto;
-import com.riyality.Dto.patients.BillRequestDto;
-import com.riyality.Dto.patients.DischargeResponseDto;
-import com.riyality.Dto.patients.PatientAdmissionRequestDto;
-import com.riyality.Dto.patients.PatientAdmissionResponseDto;
-import com.riyality.Dto.patients.PatientResponseDto;
-import com.riyality.Dto.patients.TreatmentResponceDto;
-import com.riyality.Dto.wards.WardResponseDto;
+
 
 @Controller
 @RequestMapping( "/admissions" )
@@ -90,7 +89,7 @@ public class PatientAdmissionController {
 
 			if ( result.equalsIgnoreCase( MessageConstants.ADD_ADMISSION_SUCCESS_MESSAGE ) ) {
 				ra.addFlashAttribute( "successMessage", MessageConstants.ADD_ADMISSION_SUCCESS_MESSAGE );
-				return "redirect:/wards";
+				return "redirect:/admissions/current-admissions";
 			} else {
 				ra.addFlashAttribute( "errorMessage", MessageConstants.ADD_ADMISSION_ERROR_MESSAGE );
 				return "error";
@@ -101,9 +100,13 @@ public class PatientAdmissionController {
 	}
 
 	@GetMapping( "/discharge-info/patient/{id}" )
-	public String discharge( @PathVariable int id, Model model ) {
+	public String discharge( @PathVariable int id, Long id1,Model model ) {
 		DischargeResponseDto dto = patientAdmissionService.dischargePatient( id );
 		model.addAttribute( "data", dto );
+		List<TreatmentResponceDto> result=service.treatmentList((long) id);
+    	System.out.println(result);
+         model.addAttribute("listall", result);
+         model.addAttribute("lists", id);
 		return "admissions/discharge";
 	}
 
@@ -142,6 +145,21 @@ public class PatientAdmissionController {
 		model.addAttribute( "patientList", result );
 		return "admissions/details";
 	}
+
+	
+
+	@ResponseBody
+    @PostMapping("/discharge/patient/{id}")
+    public String dischargePatient(@PathVariable int id) {
+        try {
+            patientAdmissionService.updateStatus(id);
+         
+            return "Patient discharged successfully";
+        } catch (Exception e) {
+            return "Error discharging patient: " + e.getMessage();
+        }
+    }
+
 	@ResponseBody
 	@GetMapping( "/admission-history/patient/{id}" )
 	public List<PatientAdmissionResponseDto> getAdmissionDetailsByPatient( @PathVariable Long id, Model model ) {
@@ -151,5 +169,6 @@ public class PatientAdmissionController {
 		return result;
 	}
 	
+
 
 }

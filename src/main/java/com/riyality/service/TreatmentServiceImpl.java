@@ -62,7 +62,7 @@ public class TreatmentServiceImpl implements TreatmentService{
 
 			return null;
 	    }
-
+	
 
 
 	public List<TreatmentResponceDto> getTreatmentDetails(Long admission) {

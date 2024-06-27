@@ -66,17 +66,23 @@
 							<td style="width: 15%;">${user.dateOfBirth}</td>
 							<td style="width: 15%;">${user.emergencyContactNumber }</td>
 
-							<td style="width: 10%;"><c:choose>
-									<c:when test="${user.admissionStatus =='OPD' }">
-										<a style="margin-right: 10px;" class="Patients-status"
-											href="http://localhost:8181/admissions/patient/${user.id }">Admit</a>
-									</c:when>
-									<c:otherwise>
-										<a style="margin-right: 10px;" class="Patients-status"
-											href="http://localhost:8181/admissions/discharge-info/patient/${user.id }">Discharge</a>
-									</c:otherwise>
-								</c:choose> <a href="http://localhost:8181/patients/id?id=${user.id }"><i
-									class="fa fa-pencil  edit-icon" style="font-size: 14px"></i></a></td>
+							<td style="width: 10%;">
+							
+    <c:choose>
+        <c:when test="${user.admissionStatus !='Admitted' }">
+            <a style="margin-right: 10px;" class="Patients-status"
+                href="http://localhost:8181/admissions/patient/${user.id }">Admit</a>
+        </c:when>
+        <c:otherwise>
+            <a style="margin-right: 10px;" class="Patients-status"
+                href="http://localhost:8181/admissions/discharge-info/patient/${user.id }">Discharge</a>
+        </c:otherwise>
+    </c:choose>
+    <a href="http://localhost:8181/patients/id?id=${user.id }">
+        <i class="fa fa-pencil edit-icon" style="font-size: 14px"></i>
+    </a>
+</td>
+
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -18,5 +18,5 @@ public class PrescriptionResponseDto {
 	private Long doctorId;
 	private String doctorName;
 	private LocalDate prescriptionDate;
-	private String prescription;
+	//private String prescription;
 }
