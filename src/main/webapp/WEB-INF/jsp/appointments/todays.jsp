@@ -57,7 +57,7 @@
 						<th style="width: 20%;">Phone number</th>
 						<th style="width: 15%;">Time</th>
 						<th style="width: 20%;">Doctor</th>
-						<th style="width: 15%;">Status</th>
+						<th style="width: 15%;">Button</th>
 						<th style="width: 5%;">action</th>
 					</tr> 
 				</thead>
@@ -79,7 +79,7 @@
 							<td style="width:20%;">${user.phoneNumber}</td>
 							<td style="width:15%;">${user.appointmentTime}</td>
 							<td style="width:20%;">${user.doctorName}</td>
-							<td style="width:15%;">${user.status}</td>
+						<td> <a href='/patients/details-form/${user.patientId}'><button class="btn btn-primary" type="button">Done</button></a></td>
 
 							<td style="width:5%;"><a
 								href="http://localhost:8181/appointments/id/${user.id }"><i

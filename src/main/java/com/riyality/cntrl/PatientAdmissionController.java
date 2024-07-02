@@ -22,6 +22,7 @@ import com.riyality.Dto.dropdowns.MedicineTypeDto;
 import com.riyality.Dto.patients.BillRequestDto;
 import com.riyality.Dto.patients.DischargeResponseDto;
 import com.riyality.Dto.patients.PatientAdmissionRequestDto;
+import com.riyality.Dto.patients.PatientAdmissionResponseDto;
 import com.riyality.Dto.patients.PatientResponseDto;
 import com.riyality.Dto.patients.TreatmentResponceDto;
 import com.riyality.Dto.wards.WardResponseDto;

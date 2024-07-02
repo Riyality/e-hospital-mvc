@@ -134,4 +134,23 @@ public class PatientServiceImpl implements PatientService {
 
 		return null;
 	}
+
+	@Override
+	public List<PatientResponseDto> findPatientsByPhoneNumber(String phoneNumber) {
+		 RestTemplate template = new RestTemplate();
+	        String url = "http://localhost:9696/patients/phone_number/" + phoneNumber;
+	        HttpHeaders headers = new HttpHeaders();
+	        HttpEntity<String> entity = new HttpEntity<>(headers);
+
+	        try {
+	            ParameterizedTypeReference<List<PatientResponseDto>> responseType =
+	                    new ParameterizedTypeReference<List<PatientResponseDto>>() {};
+	            ResponseEntity<List<PatientResponseDto>> response =
+	                    template.exchange(url, HttpMethod.GET, entity, responseType);
+	            return response.getBody();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return null;
+	    }
 }

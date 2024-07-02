@@ -20,4 +20,5 @@ public interface PatientService {
 	List<PatientResponseDto> findPatientsByPhoneNumber( Integer branchId, String phoneNumber );
 
 	List<PatientAdmissionResponseDto> getAdmissionDetailsByPatient(Long id);
+	List<PatientResponseDto> findPatientsByPhoneNumber(String phoneNumber);
 }

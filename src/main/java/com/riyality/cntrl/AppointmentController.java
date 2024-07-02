@@ -88,18 +88,23 @@ public class AppointmentController {
 	public String todaysAppointments( HttpSession session, Model model ) {
 		Integer branchId = ( Integer ) session.getAttribute( "branchId" );
 		List<AppointmentResponseDto> appointments = appointmentService.getTodaysAppointment( branchId );
+		
 		model.addAttribute( "appointments", appointments );
+		
 		return "appointments/todays";
 	}
 
-	@GetMapping( "/todays/for-doctor" )
-	public String todaysAppointmentsForDoctor( HttpSession session, Model model ) {
-		Integer branchId = ( Integer ) session.getAttribute( "branchId" );
-		Long loginId = ( Long ) session.getAttribute( "loginId" );
-		List<AppointmentResponseDto> appointments = appointmentService.getTodaysAppointmentsForDoctor( branchId, loginId );
-		model.addAttribute( "appointments", appointments );
-		return "appointments/todays";
+	@GetMapping("/todays/for-doctor")
+	public String todaysAppointmentsForDoctor(HttpSession session, Model model) {
+	    Integer branchId = (Integer) session.getAttribute("branchId");
+	    Long loginId = (Long) session.getAttribute("loginId");
+	
+	    List<AppointmentResponseDto> appointments = appointmentService.getTodaysAppointmentsForDoctor(branchId, loginId);
+	    System.out.println(appointments);
+	    model.addAttribute("appointments", appointments);
+	    return "appointments/todays";
 	}
+
 
 	@GetMapping( "/id/{id}" )
 	public String getupdateAppointmentForm( @PathVariable Long id, Model model, HttpSession session ) {
