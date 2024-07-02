@@ -59,14 +59,14 @@
 									</div>
 
 									<div class="col-md-12">
-										<label class="col-form-label spti-label">Appoinment
-											Date</label> <input type="datetime-local" name="appointmentDate"
+										<label class="col-form-label spti-label">Appointment
+											Date</label> <input type="date" name="appointmentDate"
 											class="col-md-12 spti-inpt">
 									</div>
 
 
 									<div class="col-md-12">
-										<label class="col-form-label spti-label">Appoinment
+										<label class="col-form-label spti-label">Appointment
 											time</label> <input type="time" name="appointmentTime"
 											class="col-md-12 spti-inpt">
 									</div>

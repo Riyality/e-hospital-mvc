@@ -139,4 +139,22 @@ public class PatientController {
 		model.addAttribute( "patientList", result );
 		return "patients/details";
 	}
+	
+	 @RequestMapping("patientsForm")
+	    public String showPatientRecords(@RequestParam("phoneNumber") String phoneNumber, Model model) {
+	       
+
+	        List<PatientResponseDto> patients = patientService.findPatientsByPhoneNumber(phoneNumber);
+	       
+
+	        if (patients.isEmpty()) {
+	      
+	            return "patients/add";
+	        } else {
+	            model.addAttribute("patients", patients);
+	        }
+
+
+	        return "patients/patientRecords";
+	    }
 }

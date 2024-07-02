@@ -124,6 +124,17 @@
 									style="margin-right: 10px; color: black;">Today's
 										appointments</span>
 							</a></li>
+							
+							
+							<form id="patientSearchForm" action="/patients/patientsForm"
+								method="GET">
+								<input type="text" id="phoneNumber" name="phoneNumber"
+									style="width: 160px; margin-right: 15px;"> <input
+									type="hidden"
+									style="margin-top: 1px; display: inline-block; margin-right: 10px; height: 10px;">
+								<span class="material-symbols-outlined" style="margin-top: 26px"></span>
+								<!--  <div id="result"></div> -->
+							</form>
 
 							<li
 								style="left: 15px; position: absolute; margin-top: -10px; left: 220px"><a
@@ -453,6 +464,13 @@
             }
 
         </script>
+         <script>
+        $(document).ready(function() {
+            $('#phoneNumber').on('change', function() {
+                $('#patientSearchForm').submit();
+            });
+        });
+    </script> 
 </body>
 
 </html>

@@ -20,6 +20,7 @@ public class AppointmentRequestDto {
 	private Long patientId;
 	private Long doctorId;
 
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate appointmentDate;
 
